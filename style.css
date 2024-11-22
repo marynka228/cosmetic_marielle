@@ -19,10 +19,18 @@
     padding: 0px 50px;
     height: 50px;
     background-color: #CC70A3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    z-index: 1000;
     
   }
   
-    .main{
+    main{
+      margin-top: 15vh;
+      
 
 
   }
@@ -30,25 +38,25 @@
   
   .slider {
     position: relative;
-    width: 80%;
-    height: 200px;
-    width: 600px;
+    width: 1000px;
     overflow: hidden;
-    border: 2px solid #ddd;
     border-radius: 10px;
-    margin: 40px 0px;
-    
-    
+  }
 
+  .slider-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
     
-
   }
   
   .slides {
-    display: flex;
     transition: transform 0.5s ease-in-out;
-    height: 200px;
-    width: 600px;
+    height: 400px;
+    width: 1000px;
+    display: flex;
     
   }
   
@@ -106,6 +114,14 @@
     height: 220px;
     border-radius: 15px;
   
+}
+h2{
+  margin-bottom: 40vh;
+  
+}
+.text-main{
+  text-align: center;
+
 }
 
   
