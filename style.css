@@ -164,6 +164,11 @@ h2 {
   gap: 20px;
   height: 420px;
 }
+
+.body-cosmetic :hover{
+  transform: scale(1.1);
+}
+
 .card {
   width: 245px;
   height: 368px;
@@ -182,6 +187,7 @@ h2 {
 
 .text-main {
   text-align: center;
+  font-size: 45px;
 }
 
 .footer {
@@ -218,26 +224,6 @@ h2 {
   border-bottom: 2px solid #af5285;;
 }
 .product-img {
-   display: flex;
-   width: 35%;
-   height: auto;
-   position: relative;
-   left: 40px;
-   right: 40px;
-   padding-top: 35px;
-}
-
-.sprey{
-  display: flex;
-  width: 30%;
-  height: auto;
-  position: relative;
-  left: 40px;
-  right: 70px;
-  padding-top: 35px;
-  align-items: center;
-}
-.tonik{
   display: flex;
   width: 75%;
   height: auto;
@@ -247,6 +233,7 @@ h2 {
   padding-top: 35px;
   align-items: center;
 }
+
 
 
 .product-title {
