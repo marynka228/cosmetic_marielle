@@ -189,6 +189,7 @@ h2 {
   background: #e478ae;
   height: 100px;
   width: 100%;
+  margin-top: auto;
 }
 .product-items{
   display: flex;
