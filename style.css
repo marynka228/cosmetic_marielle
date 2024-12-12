@@ -8,6 +8,10 @@ body {
   margin: 0px;
   background-image: url("/assets/background.jpg");
   object-fit: contain;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
 }
 header {
   display: flex;
@@ -72,6 +76,7 @@ header {
 
 main {
   margin-top: 15vh;
+  flex: 1;
 }
 
 .slider {
@@ -188,6 +193,11 @@ h2 {
 .text-main {
   text-align: center;
   font-size: 45px;
+  border-style: solid;
+  border-color:#cc70a3;
+  background-color: #e478ae;
+  color: #fff;
+  width: 100%;
 }
 
 .footer {
