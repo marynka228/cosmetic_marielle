@@ -270,6 +270,7 @@ h2 {
   color: white;
   font-size: 16px;
   line-height: 28px;
+  border-radius: 15px;
 }
 
 .button:hover {
@@ -277,4 +278,94 @@ h2 {
 }
 .button:active{
 box-shadow: 5px 5px 5px rgb(30, 1, 39)  
+}
+
+
+
+.cart-list {
+  display: flex; /* Используем flex для выравнивания по горизонтали */
+  flex-wrap: wrap; /* Разрешаем перенос строк */
+  gap: 20px; /* Промежуток между карточками */
+  margin: 20px auto;
+  padding: 10px;
+  justify-content: center;
+ 
+}
+
+.cart-item {
+  display: flex;
+  align-items: center; /* Центрируем элементы внутри карточки */
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  width: 300px;
+  height: 390px;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.cart-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрируем контент внутри карточки */
+  justify-content: center;
+}
+
+.cart-content img {
+  max-width: 100px; /* Максимальная ширина изображения */
+  margin-bottom: 10px;
+}
+
+.cart-content .product-title {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.cart-content .price {
+  font-size: 14px;
+  color: #555;
+}
+
+.remove-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 25px; 
+}
+
+.remove-button:hover {
+  background-color: #c0392b;
+}
+
+.total-price {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.empty-cart-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; 
+  text-align: center; 
+  font-size: 24px; 
+  font-weight: bold; 
+  color: #af5285; 
+  background-color: #f9f9f9; 
+  border: 1px solid #ddd;
+  border-radius: 8px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  padding: 20px; 
 }

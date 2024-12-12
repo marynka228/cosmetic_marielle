@@ -15,5 +15,6 @@ function showSlide(i) {
   slides.style.transform = `translateX(${-index * 100}%)`;
 }
 
-prev.addEventListener('click', () => showSlide(-1));
 next.addEventListener('click', () => showSlide(1));
+
+
