@@ -166,7 +166,7 @@ h2 {
 }
 
 .body-cosmetic :hover{
-  transform: scale(1.1);
+  transform: scale(1.02);
 }
 
 .card {
@@ -191,12 +191,50 @@ h2 {
 }
 
 .footer {
-  text-align: center;
-  background: #e478ae;
-  height: 100px;
+  background-color: #e478ae;
+  color: #333;
+  padding: 20px 10px;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+  position: relative; 
   width: 100%;
-  margin-top: auto;
+  z-index: 1;
 }
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-about,
+.footer-social,
+.footer-contact {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-social img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.footer-social img:hover {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.9em;
+  background-color: #f793c5;
+}
+
 .product-items{
   display: flex;
   flex-direction: row;
