@@ -154,3 +154,90 @@ function handleAddToCart(event) {
     
     searchInput.addEventListener("input", filterProducts);
   });
+
+
+
+  function calculateTotalPrice() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let totalPrice = 0;
+  
+    cart.forEach((itemHTML) => {
+      const tempDiv = document.createElement("div");
+      tempDiv.innerHTML = itemHTML;
+      const priceElement = tempDiv.querySelector(".price");
+      if (priceElement) {
+        const priceText = priceElement.textContent.replace(/[^\d]/g, "");
+        totalPrice += parseFloat(priceText);
+      }
+    });
+  
+    const totalPriceElement = document.querySelector(".total-price");
+    if (totalPriceElement) {
+      totalPriceElement.textContent = `${totalPrice} UAH`;
+    }
+  }
+  
+  function displayCartItems() {
+    const cartList = document.querySelector(".cart-list");
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  
+    if (cart.length === 0) {
+      cartList.innerHTML = "<p class='empty-cart-message'>Ваш кошик порожній</p>";
+      calculateTotalPrice(); 
+      return;
+    }
+  
+    cartList.innerHTML = ""; 
+  
+    cart.forEach((itemHTML, index) => {
+      const cartItem = document.createElement("div");
+      cartItem.className = "cart-item";
+      cartItem.innerHTML = `
+        <div class="cart-content">
+          ${itemHTML}
+        </div>
+        <button class="remove-button" data-index="${index}">Видалити</button>
+      `;
+      cartList.appendChild(cartItem);
+    });
+  
+    setupRemoveButtons();
+    calculateTotalPrice(); 
+  }
+  
+  function handleAddToCart(event) {
+    event.preventDefault();
+  
+    const productCard = event.target.closest(".product-item");
+    if (!productCard) return;
+  
+    const productHTML = productCard.outerHTML;
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push(productHTML);
+    localStorage.setItem("cart", JSON.stringify(cart));
+  
+    console.log("Карточка добавлена в корзину.");
+    displayCartItems();
+  }
+  
+  function setupRemoveButtons() {
+    const removeButtons = document.querySelectorAll(".remove-button");
+    removeButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const index = event.target.dataset.index;
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        displayCartItems(); 
+      });
+    });
+  }
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    if (window.location.pathname.includes("shopping.cart.html")) {
+      displayCartItems();
+    } else {
+      setupBuyButtons();
+    }
+  });
+  

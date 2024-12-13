@@ -473,3 +473,36 @@ box-shadow: 5px 5px 5px rgb(30, 1, 39)
 .remove-button:hover {
   background-color: #c0392b;
 }
+
+.cart-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.cart-list {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.cart-summary {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  text-align: right;
+}
+
+.total-price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #cc70a3;
+}
