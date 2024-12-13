@@ -331,12 +331,13 @@ box-shadow: 5px 5px 5px rgb(30, 1, 39)
 
 
 .cart-list {
-  display: flex; /* Используем flex для выравнивания по горизонтали */
-  flex-wrap: wrap; /* Разрешаем перенос строк */
-  gap: 20px; /* Промежуток между карточками */
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 20px; 
   margin: 20px auto;
   padding: 10px;
   justify-content:space-between;
+  flex-wrap: wrap;
  
 }
 
@@ -357,7 +358,7 @@ box-shadow: 5px 5px 5px rgb(30, 1, 39)
 .cart-content {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Центрируем контент внутри карточки */
+  align-items: center; 
   justify-content: center;
 }
 
@@ -427,7 +428,7 @@ box-shadow: 5px 5px 5px rgb(30, 1, 39)
   padding: 20px; 
 }
 
-/* Стиль для корзины */
+
 .cart-list {
   display: flex;
   flex-direction: column;
@@ -441,7 +442,7 @@ box-shadow: 5px 5px 5px rgb(30, 1, 39)
 }
 
 .cart-item {
-  position: relative; /* Для размещения кнопки в правом верхнем углу */
+  position: relative; 
   display: flex;
   flex-direction: column;
   padding: 10px;

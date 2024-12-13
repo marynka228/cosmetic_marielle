@@ -1,28 +1,26 @@
-// Функция для добавления товара в корзину
+
 function handleAddToCart(event) {
-    event.preventDefault(); // Отменяем стандартное поведение ссылки
+    event.preventDefault(); 
   
-    // Находим родительский элемент товара (карточку)
     const productCard = event.target.closest(".product-item");
     if (!productCard) {
       console.error("Карточка продукта не найдена.");
       return;
     }
   
-    // Сохраняем HTML карточки
     const productHTML = productCard.outerHTML;
   
-    // Получаем корзину из localStorage или создаем новую
+    
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.push(productHTML); // Добавляем карточку в корзину
-    localStorage.setItem("cart", JSON.stringify(cart)); // Сохраняем корзину
+    cart.push(productHTML); 
+    localStorage.setItem("cart", JSON.stringify(cart)); 
   
     console.log("Карточка добавлена в корзину.");
   }
   
-  // Настройка обработчиков для кнопок "придбати"
+ 
   function setupBuyButtons() {
-    const buyButtons = document.querySelectorAll(".button"); // Находим все кнопки
+    const buyButtons = document.querySelectorAll(".button"); 
     if (buyButtons.length === 0) {
       console.error("Кнопки 'придбати' не найдены.");
       return;
@@ -35,7 +33,7 @@ function handleAddToCart(event) {
     console.log("Обработчики кнопок настроены.");
   }
   
-  // Отображение товаров в корзине на странице shopping.cart.html
+  
   function displayCartItems() {
     const main = document.querySelector("main");
     if (!main) {
@@ -64,28 +62,28 @@ function handleAddToCart(event) {
       cartList.appendChild(cartItem);
     });
   
-    main.innerHTML = ""; // Очищаем содержимое main перед добавлением
+    main.innerHTML = ""; 
     main.appendChild(cartList);
   
-    // Настройка обработчиков для удаления товаров
+    
     setupRemoveButtons();
   }
   
-  // Удаление товаров из корзины
+ 
   function setupRemoveButtons() {
     const removeButtons = document.querySelectorAll(".remove-button");
     removeButtons.forEach((button) => {
       button.addEventListener("click", (event) => {
         const index = event.target.dataset.index;
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
-        cart.splice(index, 1); // Удаляем товар из массива
-        localStorage.setItem("cart", JSON.stringify(cart)); // Обновляем localStorage
-        displayCartItems(); // Обновляем отображение корзины
+        cart.splice(index, 1); 
+        localStorage.setItem("cart", JSON.stringify(cart)); 
+        displayCartItems(); 
       });
     });
   }
   
-  // Определяем, где мы находимся, и запускаем нужную логику
+  
   document.addEventListener("DOMContentLoaded", () => {
     if (window.location.pathname.includes("shopping.cart.html")) {
       displayCartItems();
@@ -102,12 +100,12 @@ function handleAddToCart(event) {
   
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     if (cart.length === 0) {
-      // Создаем элемент для сообщения о пустой корзине
+      
       const emptyMessage = document.createElement("div");
       emptyMessage.className = "empty-cart-message";
       emptyMessage.innerHTML = "<p>Ваш кошик порожній</p>";
-      main.innerHTML = ""; // Очищаем содержимое main перед добавлением
-      main.appendChild(emptyMessage); // Добавляем сообщение в main
+      main.innerHTML = ""; 
+      main.appendChild(emptyMessage); 
       return;
     }
   
@@ -126,10 +124,10 @@ function handleAddToCart(event) {
       cartList.appendChild(cartItem);
     });
   
-    main.innerHTML = ""; // Очищаем содержимое main перед добавлением
+    main.innerHTML = ""; 
     main.appendChild(cartList);
   
-    // Настройка обработчиков для удаления товаров
+    
     setupRemoveButtons();
   }
   
@@ -137,22 +135,22 @@ function handleAddToCart(event) {
     const searchInput = document.querySelector(".search-input");
     const productItems = document.querySelectorAll(".product-item");
   
-    // Функция для фильтрации карточек
+   
     function filterProducts() {
-      const query = searchInput.value.toLowerCase(); // Получаем текст из поля ввода и приводим к нижнему регистру
+      const query = searchInput.value.toLowerCase(); 
   
       productItems.forEach((item) => {
         const title = item.querySelector(".product-title").textContent.toLowerCase();
         
-        // Проверяем, содержит ли текст заголовка введённый запрос
+       
         if (title.includes(query)) {
-          item.style.display = "block"; // Показываем карточку
+          item.style.display = "block"; 
         } else {
-          item.style.display = "none"; // Скрываем карточку
+          item.style.display = "none"; 
         }
       });
     }
   
-    // Добавляем обработчик события ввода в поле поиска
+    
     searchInput.addEventListener("input", filterProducts);
   });
